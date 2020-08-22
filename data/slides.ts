@@ -1,25 +1,31 @@
-import { SlideObj } from "../types";
+import { Product } from "../types";
 
-export const slides: SlideObj[] = [
+export const slides: Product[] = [
   {
     id: "0",
-    title: "Get Motivated",
-    image: require("../assets/images/101-gym-guy.png"),
-    subtitle:
-      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor.",
+    name: "Galxy Z Flip",
+    image: require("../assets/images/image1.png"),
+    company: "Samsung",
+    subtitle: "Eiusmod consequat ut qui nisi et",
+    description:
+      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor. Consequat magna commodo amet exercitation Lorem.",
   },
   {
     id: "1",
-    title: "Set your goals",
-    image: require("../assets/images/103-gym-time.png"),
-    subtitle:
-      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor.",
+    name: "Series 5",
+    image: require("../assets/images/image2.png"),
+    company: "Apple",
+    subtitle: "Eiusmod consequat ut qui nisi et",
+    description:
+      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor. Consequat magna commodo amet exercitation Lorem.",
   },
   {
     id: "2",
-    title: "Do it yourself",
-    image: require("../assets/images/102-gym-cycle.png"),
-    subtitle:
-      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor.",
+    name: "iPhone 11 Pro",
+    image: require("../assets/images/image3.png"),
+    company: "Apple",
+    subtitle: "Eiusmod consequat ut qui nisi et",
+    description:
+      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor. Consequat magna commodo amet exercitation Lorem.",
   },
 ];

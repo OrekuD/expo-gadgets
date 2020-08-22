@@ -2,12 +2,14 @@ import { ImageRequireSource } from "react-native";
 
 export type HomeStackParamList = {
   HomeScreen: undefined;
-  ProductScreen: undefined;
+  ProductScreen: { item: Product };
 };
 
-export interface SlideObj {
+export interface Product {
   id: string;
-  title: string;
+  name: string;
   image: ImageRequireSource;
   subtitle: string;
+  description: string;
+  company: string;
 }

@@ -1,6 +1,8 @@
-const blue = "#2B9CF2";
-const black = "#202020";
+const red = "#FE587E";
+const black = "#000000";
 const white = "#FFFFFF";
-const grey = "#ABABAB";
+const palewhite = "#F8F8F8";
+const darkgrey = "#322F3A";
+const lightgrey = "#A09CAB";
 
-export { blue, black, white, grey };
+export { red, black, white, darkgrey, lightgrey, palewhite };

@@ -1,23 +1,25 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { width } from "../constants/Layout";
-import { SlideObj } from "../types";
-import { black } from "../constants/Colors";
+import { Product } from "../types";
+import { black, white, darkgrey, lightgrey } from "../constants/Colors";
+import { RectButton } from "react-native-gesture-handler";
 
 interface SlideProps {
-  slide: SlideObj;
+  slide: Product;
+  first: boolean;
 }
 
-const IMAGE_SIZE = width * 0.8;
+const CARD_WIDTH = width * 0.4;
 
-const Slide = ({ slide }: SlideProps) => {
-  const { title, subtitle, image } = slide;
+const Slide = ({ slide, first }: SlideProps) => {
+  const { name, company, image } = slide;
   return (
-    <View style={styles.container}>
-      <Image source={image} resizeMode="contain" style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.subtitle}>{subtitle}</Text>
-    </View>
+    <RectButton style={{ ...styles.container, marginLeft: first ? 30 : 0 }}>
+      <Image source={image} style={styles.image} resizeMode="contain" />
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.company}>{company}</Text>
+    </RectButton>
   );
 };
 
@@ -25,28 +27,30 @@ export default Slide;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: width,
+    width: CARD_WIDTH,
+    height: CARD_WIDTH * 2,
+    elevation: 1,
+    backgroundColor: white,
     alignItems: "center",
     justifyContent: "center",
+    marginRight: 20,
   },
   image: {
-    width: IMAGE_SIZE,
-    height: IMAGE_SIZE,
-    marginTop: 60,
-  },
-  title: {
-    fontFamily: "Poppins-Bold",
-    fontSize: 32,
-    color: black,
+    width: CARD_WIDTH * 0.8,
+    height: CARD_WIDTH * 0.8,
     marginVertical: 10,
   },
-  subtitle: {
-    fontFamily: "Poppins-Light",
-    fontSize: 20,
-    color: black,
-    marginVertical: 10,
-    width: "65%",
-    textAlign: "center",
+  name: {
+    fontFamily: "Rubik-Regular",
+    fontSize: 18,
+    color: darkgrey,
+    marginVertical: 5,
+  },
+  company: {
+    fontFamily: "Rubik-Regular",
+    fontSize: 14,
+    color: lightgrey,
+    marginVertical: 5,
+    textTransform: "uppercase",
   },
 });
