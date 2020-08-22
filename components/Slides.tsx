@@ -4,14 +4,16 @@ import { width } from "../constants/Layout";
 import { darkgrey } from "../constants/Colors";
 import { slides } from "../data/slides";
 import Slide from "./Slide";
+import { Ionicons } from "@expo/vector-icons";
 
 const Slides = () => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <Text style={styles.text1}>Top Picks</Text>
-        <View>
+        <View style={{ flexDirection: "row" }}>
           <Text style={styles.text2}>See all</Text>
+          <Ionicons name="md-arrow-round-forward" color={darkgrey} size={18} />
         </View>
       </View>
       <ScrollView

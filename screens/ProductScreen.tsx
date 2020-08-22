@@ -6,8 +6,15 @@ import {
   Animated,
   Text,
   Image,
+  TouchableOpacity,
 } from "react-native";
-import { white, darkgrey, palewhite } from "../constants/Colors";
+import {
+  white,
+  darkgrey,
+  palewhite,
+  lightgrey,
+  darkergrey,
+} from "../constants/Colors";
 import { StackScreenProps } from "@react-navigation/stack";
 import { HomeStackParamList } from "../types";
 import { Button, Slide } from "../components";
@@ -26,14 +33,30 @@ const ProductScreen = ({
   const { item } = route.params;
   const { image, name, description, subtitle } = item;
   return (
-    <View style={{ ...styles.container }}>
-      <RectButton style={{ ...styles.backButton, top: top * 2 }}>
-        <Ionicons name="md-arrow-round-back" color={darkgrey} size={26} />
+    <>
+      <RectButton
+        onPress={navigation.goBack}
+        style={{ ...styles.backButton, top: top * 2 }}
+      >
+        <Ionicons name="md-arrow-round-back" color={darkgrey} size={22} />
       </RectButton>
-      <View style={styles.imageContainer}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
-      </View>
-    </View>
+      <ScrollView style={{ backgroundColor: white }}>
+        <View style={{ ...styles.container }}>
+          <View style={styles.imageContainer}>
+            <Image source={image} style={styles.image} resizeMode="contain" />
+          </View>
+          <View style={styles.content}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.subtitle}>{subtitle}</Text>
+            <Text style={styles.description}>{description}</Text>
+            <RectButton style={styles.button}>
+              <Text style={styles.buttonText}>Add to cart</Text>
+              <Ionicons name="md-arrow-round-forward" color={white} size={18} />
+            </RectButton>
+          </View>
+        </View>
+      </ScrollView>
+    </>
   );
 };
 
@@ -42,13 +65,11 @@ export default ProductScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: white,
   },
   imageContainer: {
-    // marginTop: 30,
     width: width,
-    height: height * 0.5,
-    // backgroundColor: white,
+    height: height * 0.6,
+    paddingTop: 20,
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
@@ -56,6 +77,7 @@ const styles = StyleSheet.create({
   image: {
     width: "130%",
     height: "130%",
+    marginLeft: 30,
   },
   backButton: {
     position: "absolute",
@@ -67,5 +89,48 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: white,
+    zIndex: 10,
+  },
+  content: {
+    width: width,
+    height: height * 0.4,
+    alignItems: "center",
+  },
+  name: {
+    fontFamily: "Rubik-Light",
+    fontSize: 38,
+    color: darkgrey,
+    marginVertical: 5,
+  },
+  description: {
+    fontFamily: "Rubik-Light",
+    fontSize: 18,
+    width: "80%",
+    textAlign: "center",
+    lineHeight: 30,
+  },
+  subtitle: {
+    fontFamily: "Rubik-Regular",
+    fontSize: 18,
+    color: lightgrey,
+    textTransform: "uppercase",
+    marginVertical: 20,
+    letterSpacing: 1.4,
+  },
+  button: {
+    width: width * 0.55,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: darkergrey,
+    marginTop: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 35,
+  },
+  buttonText: {
+    fontFamily: "Rubik-Medium",
+    fontSize: 18,
+    color: white,
   },
 });

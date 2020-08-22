@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, StyleSheet, Image } from "react-native";
 import { width } from "../constants/Layout";
 import { Product } from "../types";
-import { black, white, darkgrey, lightgrey } from "../constants/Colors";
+import { white, darkgrey, lightgrey } from "../constants/Colors";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
@@ -11,7 +11,7 @@ interface SlideProps {
   first: boolean;
 }
 
-const CARD_WIDTH = width * 0.4;
+const CARD_WIDTH = width * 0.45;
 
 const Slide = ({ slide, first }: SlideProps) => {
   const { name, company, image } = slide;
@@ -33,7 +33,7 @@ export default Slide;
 const styles = StyleSheet.create({
   container: {
     width: CARD_WIDTH,
-    height: CARD_WIDTH * 2,
+    height: CARD_WIDTH * 1.8,
     elevation: 1,
     backgroundColor: white,
     alignItems: "center",

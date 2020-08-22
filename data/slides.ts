@@ -3,10 +3,10 @@ import { Product } from "../types";
 export const slides: Product[] = [
   {
     id: "0",
-    name: "Galxy Z Flip",
+    name: "Galaxy Z Flip",
     image: require("../assets/images/image1.png"),
     company: "Samsung",
-    subtitle: "Eiusmod consequat ut qui nisi et",
+    subtitle: "changing the shape of the future",
     description:
       "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor. Consequat magna commodo amet exercitation Lorem.",
   },
