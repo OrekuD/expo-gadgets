@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { white, palewhite, lightgrey } from "../constants/Colors";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { palewhite, lightgrey } from "../constants/Colors";
 import { StackScreenProps } from "@react-navigation/stack";
 import { HomeStackParamList } from "../types";
 import { Header, Slides } from "../components";
@@ -9,16 +9,18 @@ const HomeScreen = ({
   navigation,
 }: StackScreenProps<HomeStackParamList, "HomeScreen">) => {
   return (
-    <View style={styles.container}>
-      <Header />
-      <View style={styles.content}>
-        <Text style={styles.subTitle}>Welcome back, victor!</Text>
-        <Text style={styles.mainTitle}>
-          Let me show you what's trending today
-        </Text>
+    <ScrollView style={{ backgroundColor: palewhite }}>
+      <View style={styles.container}>
+        <Header />
+        <View style={styles.content}>
+          <Text style={styles.subTitle}>Welcome back, victor!</Text>
+          <Text style={styles.mainTitle}>
+            Let me show you what's trending today
+          </Text>
+        </View>
+        <Slides />
       </View>
-      <Slides />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -27,7 +29,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: palewhite,
   },
   content: {
     paddingHorizontal: 30,

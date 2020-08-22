@@ -1,13 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { width } from "../constants/Layout";
-import { black, darkgrey } from "../constants/Colors";
+import { darkgrey } from "../constants/Colors";
 import { slides } from "../data/slides";
 import Slide from "./Slide";
 
-interface SlideProps {}
-
-const Slides = ({}: SlideProps) => {
+const Slides = () => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>

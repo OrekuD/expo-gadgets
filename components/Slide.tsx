@@ -4,6 +4,7 @@ import { width } from "../constants/Layout";
 import { Product } from "../types";
 import { black, white, darkgrey, lightgrey } from "../constants/Colors";
 import { RectButton } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 interface SlideProps {
   slide: Product;
@@ -14,8 +15,12 @@ const CARD_WIDTH = width * 0.4;
 
 const Slide = ({ slide, first }: SlideProps) => {
   const { name, company, image } = slide;
+  const navigation = useNavigation();
   return (
-    <RectButton style={{ ...styles.container, marginLeft: first ? 30 : 0 }}>
+    <RectButton
+      style={{ ...styles.container, marginLeft: first ? 30 : 0 }}
+      onPress={() => navigation.navigate("ProductScreen", { item: slide })}
+    >
       <Image source={image} style={styles.image} resizeMode="contain" />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.company}>{company}</Text>
