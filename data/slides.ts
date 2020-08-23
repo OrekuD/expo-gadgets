@@ -8,7 +8,7 @@ export const slides: Product[] = [
     company: "Samsung",
     subtitle: "changing the shape of the future",
     description:
-      "Id occaecat id velit elit fugiat commodo ut pariatur exercitation sint dolor. Consequat magna commodo amet exercitation Lorem.",
+      "The full screen phone that folds to fit in your pocket with revolutionary flexible glass, a camera made to stand on its own, and a dual battery that lasts all day.",
   },
   {
     id: "1",
